@@ -48,14 +48,6 @@ The guide includes:
 
 ---
 
-## 📦 Repository Contents
-
-via-browser-optimization-guide/
-├── index.html              # Main website (responsive, mobile-optimized)
-├── README.md              # This file
-└── LICENSE                # MIT License
----
-
 ## 💡 Who is This For?
 
 - **Via Browser users** seeking better ad-blocking and privacy
