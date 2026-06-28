@@ -81,8 +81,8 @@ Configuration works on Android 10+ across all devices.
 
 Found an issue or have a suggestion? We'd love your input!
 
-- **Report issues:** [GitHub Issues](https://github.com/yourusername/via-browser-optimization-guide/issues)
-- **Suggest improvements:** [GitHub Discussions](https://github.com/yourusername/via-browser-optimization-guide/discussions)
+- **Report issues:** [GitHub Issues](https://github.com/ilimon/via-browser-optimization-guide/issues)
+- **Suggest improvements:** [GitHub Discussions](https://github.com/ilimon/via-browser-optimization-guide/discussions)
 - **Discuss with the community:** [Via Browser Forum](https://via-browser.com/forum)
 
 ---
@@ -98,7 +98,7 @@ You're free to use, modify, and share this guide for personal or commercial purp
 ## 🌐 Links
 
 - **📖 Full Guide:** [http://noushad.qzz.io/via-browser-optimization-guide/](http://noushad.qzz.io/via-browser-optimization-guide/)
-- **🐛 Report Issues:** [GitHub Issues](https://github.com/yourusername/via-browser-optimization-guide/issues)
+- **🐛 Report Issues:** [GitHub Issues](https://github.com/ilimon/via-browser-optimization-guide/issues)
 - **💬 Community Forum:** [Via Browser Forum](https://via-browser.com/forum)
 - **📱 Via Browser:** [Play Store](https://play.google.com/store/apps/details?id=marks.viabrowser) | [F-Droid](https://f-droid.org)
 
