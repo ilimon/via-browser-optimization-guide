@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete guide to optimizing Via Browser for speed & privacy on Android">
+    <meta name="keywords" content="Via Browser, Android, Ad Blocker, Privacy, Optimization">
+    <title>Via Browser ad blocking and Optimization Guide</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📱 Via Browser Guide</div>
+            <ul class="nav-menu">
+                <li><a href="#intro" class="nav-link">Intro</a></li>
+                <li><a href="#part1" class="nav-link">Filters</a></li>
+                <li><a href="#part2" class="nav-link">WebView</a></li>
+                <li><a href="#part3" class="nav-link">Privacy</a></li>
+                <li><a href="#results" class="nav-link">Results</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Via Browser Optimization Guide</h1>
+            <p>Master ad-blocking, speed optimization, and privacy on Android</p>
+            <div class="hero-badges">
+                <span class="badge">Android 15</span>
+                <span class="badge">Redmi 12+</span>
+                <span class="badge">100/100 Adblock Score</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Introduction -->
+        <section id="intro" class="section">
+            <h2>Introduction</h2>
+            <p>This guide walks you through building a <strong>high-performance, privacy-focused ad-blocking setup</strong> on Via Browser for Android. The configuration is optimized for mid-range devices like the Redmi 12 running Android 15, but applies to most Android phones.</p>
+            
+            <div class="highlight-box">
+                <h3>What You'll Achieve</h3>
+                <ul>
+                    <li>✓ Block ads and trackers without slowing your device</li>
+                    <li>✓ Achieve a perfect 100/100 score on adblock detection tests</li>
+                    <li>✓ Noticeably faster browsing and reduced data usage</li>
+                    <li>✓ Maintain compatibility with mainstream websites</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Prerequisites</h3>
+                <ul>
+                    <li>Via Browser (latest version)</li>
+                    <li>Access to WebView DevTools (Settings > Advanced > WebView DevTools)</li>
+                    <li>10–15 minutes of setup time</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Part 1: Filter Configuration -->
+        <section id="part1" class="section">
+            <h2>Part 1: Filter Configuration</h2>
+            
+            <div class="subsection">
+                <h3>Step 1.1: Access Ad Blocker Settings</h3>
+                <ol>
+                    <li>Open <strong>Via Browser</strong></li>
+                    <li>Tap the <strong>menu icon</strong> (≡) → <strong>Settings</strong></li>
+                    <li>Navigate to <strong>Ad Blocker</strong> → <strong>Filter Settings</strong></li>
+                    <li>You'll see your current filter list subscription area</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 1.2: Remove Redundant Filters</h3>
+                <p>Start by <strong>clearing existing filters</strong> to eliminate overlap and reduce device strain.</p>
+                
+                <div class="warning-box">
+                    <strong>Why:</strong> Multi-filter redundancy wastes memory and CPU on your Redmi 12. A lean, curated list performs better than a bloated one.
+                </div>
+
+                <p><strong>Remove these (if present):</strong></p>
+                <ul>
+                    <li><code>https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts</code>
+                        <br><small>Reason: Blunt domain-blocking approach; massive overlap with HaGeZi Pro+</small>
+                    </li>
+                    <li>Multiple regional filters (unless you browse those regions regularly)</li>
+                    <li>Duplicate EasyList variants</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 1.3: Add the Core Filter Stack</h3>
+                <p>Add these filters <strong>in order:</strong></p>
+                
+                <table class="filter-table">
+                    <thead>
+                        <tr>
+                            <th>Filter</th>
+                            <th>URL</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>EasyList</strong></td>
+                            <td><code>https://easylist.to/easylist/easylist.txt</code></td>
+                            <td>Core ad blocking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>uBlock filters</strong></td>
+                            <td><code>https://cdn.jsdelivr.net/gh/uBlockOrigin/uAssets@master/filters/filters.txt</code></td>
+                            <td>Enhanced ad detection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HaGeZi's Pro+ DNS</strong></td>
+                            <td><code>https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro-plus.txt</code></td>
+                            <td>Privacy + tracker blocking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EasyPrivacy</strong></td>
+                            <td><code>https://easylist.to/easylist/easyprivacy.txt</code></td>
+                            <td>Behavioral tracker blocking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fanboy's Annoyance</strong></td>
+                            <td><code>https://secure.fanboy.co.nz/fanboy-annoyance.txt</code></td>
+                            <td>Social widgets + cookie notices</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>To add each filter:</strong></p>
+                <ol>
+                    <li>In <strong>Filter Settings</strong>, tap <strong>+ Add Filter</strong></li>
+                    <li>Paste the URL</li>
+                    <li>Tap <strong>Save</strong></li>
+                    <li>Repeat for all five filters</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 1.4: Verify Filter Load</h3>
+                <ol>
+                    <li>Go to <strong>Ad Blocker</strong> → <strong>Filter Statistics</strong></li>
+                    <li>You should see <strong>~100,000+ rules loaded</strong> across all filters</li>
+                    <li>If the number is significantly lower, re-check your URLs for typos</li>
+                </ol>
+                <p><strong>Expected result:</strong> Fast page loads with zero perceptible slowdown on a Redmi 12.</p>
+            </div>
+        </section>
+
+        <!-- Part 2: WebView DevTools Optimization -->
+        <section id="part2" class="section">
+            <h2>Part 2: WebView DevTools Optimization</h2>
+            <p>WebView is the rendering engine behind Via Browser. Optimizing its flags improves performance dramatically.</p>
+
+            <div class="subsection">
+                <h3>Step 2.1: Access WebView Flags</h3>
+                <ol>
+                    <li>Open Via Browser</li>
+                    <li>Tap <strong>menu</strong> (≡) → <strong>Settings</strong> → <strong>Advanced</strong></li>
+                    <li>Tap <strong>WebView DevTools</strong></li>
+                    <li>You'll see the <strong>WebView Flags</strong> interface</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 2.2: Enable Core Performance Flags</h3>
+                <p><strong>Search for and enable each flag below:</strong></p>
+                
+                <table class="filter-table">
+                    <thead>
+                        <tr>
+                            <th>Flag Name</th>
+                            <th>Status</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ignore-gpu-blocklist</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Forces GPU acceleration (safe on Redmi 12)</td>
+                        </tr>
+                        <tr>
+                            <td><code>WebViewSurfaceControl</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Modern rendering pipeline</td>
+                        </tr>
+                        <tr>
+                            <td><code>WebViewVulkanIntermediateBuffer</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Vulkan graphics stability</td>
+                        </tr>
+                        <tr>
+                            <td><code>WebViewEnableADPF</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Adaptive performance framework</td>
+                        </tr>
+                        <tr>
+                            <td><code>UseDMSAForTiles</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Faster tile rendering during scroll</td>
+                        </tr>
+                        <tr>
+                            <td><code>VSyncDecoding</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Syncs video decoding with display refresh</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>How to enable a flag:</strong></p>
+                <ol>
+                    <li>Tap the <strong>search box</strong> at the top</li>
+                    <li>Type the flag name</li>
+                    <li>Tap the flag result</li>
+                    <li>Toggle <strong>Enabled</strong></li>
+                    <li>Return to the list</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 2.3: Add Advanced Optimization Flags</h3>
+                <p><strong>These flags provide marginal but noticeable improvements:</strong></p>
+                
+                <table class="filter-table">
+                    <thead>
+                        <tr>
+                            <th>Flag Name</th>
+                            <th>Status</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>enable-features=WebViewThreadSafeMedia</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Improved media handling stability</td>
+                        </tr>
+                        <tr>
+                            <td><code>enable-features=WebViewNewGestureHandling</code></td>
+                            <td><strong>Enable</strong></td>
+                            <td>Better touch responsiveness</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>To add a custom flag:</strong></p>
+                <ol>
+                    <li>Tap <strong>+ Add Flag</strong> (if available) or use the search bar</li>
+                    <li>Enter the flag name exactly as shown</li>
+                    <li>Toggle <strong>Enabled</strong></li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 2.4: Disable Privacy-Draining Flags</h3>
+                <p>Disable or leave off these flags to protect privacy:</p>
+                
+                <table class="filter-table">
+                    <thead>
+                        <tr>
+                            <th>Flag Name</th>
+                            <th>Status</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI service provider settings</td>
+                            <td><strong>Disable</strong></td>
+                            <td>Reduces unnecessary telemetry to AI providers</td>
+                        </tr>
+                        <tr>
+                            <td>Telemetry flags (if present)</td>
+                            <td><strong>Disable</strong></td>
+                            <td>Privacy protection</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Part 3: Privacy Settings -->
+        <section id="part3" class="section">
+            <h2>Part 3: Via Browser Privacy Settings</h2>
+
+            <div class="subsection">
+                <h3>Step 3.1: Disable Built-in AI Features</h3>
+                <ol>
+                    <li>Open Via Browser</li>
+                    <li>Tap <strong>menu</strong> (≡) → <strong>Settings</strong> → <strong>General</strong></li>
+                    <li>Find <strong>AI service</strong> settings</li>
+                    <li><strong>Disable:</strong>
+                        <ul>
+                            <li>"AI service provider"</li>
+                            <li>"AI prompt"</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="info-box">
+                    <strong>Why:</strong> These features send data to external AI providers. Disabling them improves privacy and reduces background data usage.
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 3.2: Enable Core Privacy Options</h3>
+                <ol>
+                    <li>In <strong>Settings</strong>, go to <strong>Privacy & Security</strong></li>
+                    <li><strong>Enable:</strong>
+                        <ul>
+                            <li>"Do Not Track" requests</li>
+                            <li>"Clear data on exit" (cookies, cache, history)</li>
+                            <li>"Block third-party cookies"</li>
+                            <li>"HTTPS-Only Mode" (if available)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 3.3: Configure User Agent (Optional)</h3>
+                <p><strong>Recommendation:</strong> Keep the <strong>default user agent</strong>. This avoids breaking website compatibility while maintaining adequate privacy.</p>
+                
+                <p><strong>Only change if:</strong></p>
+                <ul>
+                    <li>A specific website requires a different user agent</li>
+                    <li>You're targeting a specific device profile (rare on mobile)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Part 4: Testing -->
+        <section id="testing" class="section">
+            <h2>Part 4: Testing & Verification</h2>
+
+            <div class="subsection">
+                <h3>Step 4.1: Run an Adblock Detection Test</h3>
+                <ol>
+                    <li>Visit <strong><a href="https://adblock-tester.com/" target="_blank">https://adblock-tester.com/</a></strong></li>
+                    <li>Run the full test suite</li>
+                    <li><strong>Expected result:</strong> 100/100 or near-perfect score</li>
+                </ol>
+
+                <div class="warning-box">
+                    <strong>If you score below 95/100:</strong>
+                    <ul>
+                        <li>Verify all filters loaded correctly (Part 1, Step 1.4)</li>
+                        <li>Check that WebView flags are enabled (Part 2)</li>
+                        <li>Clear browser cache: <strong>Settings</strong> → <strong>Privacy</strong> → <strong>Clear Browsing Data</strong> → <strong>All Time</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Step 4.2: Test Real-World Browsing</h3>
+                <p>Visit these sites to confirm functionality:</p>
+                <ul>
+                    <li><strong>YouTube</strong> – Should load video ads correctly; should block sidebar ads</li>
+                    <li><strong>Reddit</strong> – Should load normally; should remove promotional content</li>
+                    <li><strong>News sites</strong> (BBC, CNN, etc.) – Should load articles with minimal ads</li>
+                    <li><strong>Bangladeshi sites</strong> (if applicable) – Should load without geo-blocking issues</li>
+                </ul>
+
+                <p><strong>If a site breaks:</strong></p>
+                <p>The ad blocker may be too aggressive. See Part 5 for whitelist instructions.</p>
+            </div>
+        </section>
+
+        <!-- Part 5: Troubleshooting -->
+        <section id="troubleshooting" class="section">
+            <h2>Part 5: Troubleshooting</h2>
+
+            <div class="subsection">
+                <h3>Issue: Website Won't Load or Shows Errors</h3>
+                
+                <p><strong>Solution:</strong></p>
+                <ol>
+                    <li>Tap <strong>menu</strong> (≡) → <strong>Ad Blocker</strong></li>
+                    <li>Tap the <strong>toggle</strong> to temporarily <strong>disable the ad blocker</strong></li>
+                    <li>Reload the page</li>
+                    <li>If it loads, the blocker is the culprit</li>
+                </ol>
+
+                <p><strong>Permanent fix:</strong></p>
+                <ol>
+                    <li>Re-enable the ad blocker</li>
+                    <li>Go to <strong>Ad Blocker</strong> → <strong>Whitelist</strong></li>
+                    <li>Add the domain (e.g., <code>example.com</code>)</li>
+                    <li>Reload the page</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Issue: Slow Browsing Despite Filter Optimization</h3>
+                
+                <p><strong>Checklist:</strong></p>
+                <ul>
+                    <li>Close unused tabs (reduces memory load)</li>
+                    <li>Disable WebView experimental flags one by one to isolate the culprit</li>
+                    <li>Restart Via Browser</li>
+                    <li>Clear cache: <strong>Settings</strong> → <strong>Privacy</strong> → <strong>Clear Browsing Data</strong></li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Issue: Ads Still Appearing</h3>
+                
+                <p><strong>Solution:</strong></p>
+                <ol>
+                    <li>Verify filter load count in <strong>Ad Blocker</strong> → <strong>Filter Statistics</strong> (should be 100k+)</li>
+                    <li>Run the adblock-tester.com test again</li>
+                    <li>Check filter URLs for typos</li>
+                    <li>Some ads (video pre-rolls on YouTube) require additional userscript solutions</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Part 6: Maintenance -->
+        <section id="maintenance" class="section">
+            <h2>Part 6: Maintenance Schedule</h2>
+
+            <div class="subsection">
+                <h3>Weekly</h3>
+                <ul>
+                    <li>Check <strong>Filter Statistics</strong> to ensure rules are loading</li>
+                    <li>Test on one major website (YouTube, Reddit, etc.)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Monthly</h3>
+                <ul>
+                    <li>Run <strong>adblock-tester.com</strong> to verify score</li>
+                    <li>Review WebView flags; disable any that cause slowdowns</li>
+                    <li>Clear browser cache and temporary files</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Every 3 Months</h3>
+                <ul>
+                    <li>Review filter URLs; update any that have moved</li>
+                    <li>Check Via Browser for updates; apply new versions</li>
+                    <li>Reass which filters you actually need (remove unused ones)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results" class="section">
+            <h2>Results You Can Expect</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">🎯</div>
+                    <h3>Adblock Detection</h3>
+                    <p>100/100 on adblock-tester.com</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">⚡</div>
+                    <h3>Browsing Speed</h3>
+                    <p>Noticeably faster page loads and scrolling</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">📊</div>
+                    <h3>Data Usage</h3>
+                    <p>30–50% reduction in bandwidth</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">🔒</div>
+                    <h3>Privacy</h3>
+                    <p>Minimal third-party tracking</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">📱</div>
+                    <h3>Device Performance</h3>
+                    <p>No lag or stuttering on mid-range hardware</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">✨</div>
+                    <h3>Overall Experience</h3>
+                    <p>Seamless, fast, and private browsing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Configuration Summary -->
+        <section id="summary" class="section">
+            <h2>Final Configuration Summary</h2>
+
+            <div class="summary-box">
+                <h3>📋 Filters</h3>
+                <ul>
+                    <li>EasyList</li>
+                    <li>uBlock filters</li>
+                    <li>HaGeZi's Pro+ DNS Blocklist</li>
+                    <li>EasyPrivacy</li>
+                    <li>Fanboy's Annoyance List</li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h3>⚙️ WebView Flags (Enabled)</h3>
+                <ul>
+                    <li>ignore-gpu-blocklist</li>
+                    <li>WebViewSurfaceControl</li>
+                    <li>WebViewVulkanIntermediateBuffer</li>
+                    <li>WebViewEnableADPF</li>
+                    <li>UseDMSAForTiles</li>
+                    <li>VSyncDecoding</li>
+                    <li>enable-features=WebViewThreadSafeMedia</li>
+                    <li>enable-features=WebViewNewGestureHandling</li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h3>🔐 Privacy Settings</h3>
+                <ul>
+                    <li>AI features disabled</li>
+                    <li>Do Not Track enabled</li>
+                    <li>Third-party cookies blocked</li>
+                    <li>HTTPS-Only Mode enabled</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer-content" class="section footer-section">
+            <h2>Questions & Support</h2>
+            <p>If you encounter issues:</p>
+            <ol>
+                <li>Review the <strong>Troubleshooting</strong> section</li>
+                <li>Check Via Browser's official forum</li>
+                <li>Verify filter URLs match exactly (copy-paste from this guide)</li>
+                <li>Test on multiple sites before assuming a setting is broken</li>
+            </ol>
+
+            <div class="footer-meta">
+                <p><strong>Last updated:</strong> June 28, 2026</p>
+                <p><strong>Tested on:</strong> Redmi 12, Android 15, Via Browser (latest)</p>
+                <p><strong>License:</strong> MIT</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Via Browser Optimization Guide. Licensed under MIT.</p>
+            <p><a href="https://github.com" target="_blank">Share on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
